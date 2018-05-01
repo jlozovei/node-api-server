@@ -10,10 +10,7 @@ app.use(bodyParser.json())
 
 app.use(cors())
 
-
-app.listen(3001, () => {
-	console.log(`Server up and running at localhost:3001`)
-})
+app.set('port', (process.env.PORT || 3001))
 
 app.get('/', (request, response) => {
 	response.status(201)
