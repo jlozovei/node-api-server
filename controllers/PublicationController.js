@@ -6,37 +6,80 @@ const PublicationModel = require('../models/PublicationModel')
 
 module.exports = {
 	getAll: (request, response, next) => {
-		response.status(201)
-		response.json({ status: 'OK', message: 'Your request was successfully received' })
+		PublicationModel.find({ deleted_at: "" }, (err, data) => {
+			if(err)
+				return next(err)
+		    
+		    response.json(data.reverse())
+		})
 	},
 
 	getById: (request, response, next) => {
-		response.status(201)
-		response.json({ status: 'OK', message: 'Your request was successfully received' })
+		const {_id} = request.params
+
+		PublicationModel.findOne(_id, (err, data) => {
+			if(err)
+				return next(err)
+
+			response.json(data)
+		})
 	},
 
 	create: (request, response, next) => {
-		response.status(201)
-		response.json({ status: 'OK', message: 'Your request was successfully received' })
+		const {body} = request
+
+		PublicationModel.create(body, (err, data) => {
+			if(err)
+				return next(err)
+
+			response.json(data)
+		})
 	},
 
 	update: (request, response, next) => {
-		response.status(201)
-		response.json({ status: 'OK', message: 'Your request was successfully received' })
+		const {_id} = request.params,
+			{body} = request
+
+		PublicationModel.update(_id, body, (err, data) => {
+			if(err)
+				return next(err)
+			
+			response.json(data)
+		})
 	},
 
 	updateStars: (request, response, next) => {
-		response.status(201)
-		response.json({ status: 'OK', message: 'Your request was successfully received' })
+		const {_id} = request.params,
+			{body} = request
+
+		PublicationModel.update(_id, { $set: { stars: body.stars } }, (err, data) => {
+			if(err)
+				return next(err)
+			
+			response.json(data)
+		})
 	},
 
 	updateReport: (request, response, next) => {
-		response.status(201)
-		response.json({ status: 'OK', message: 'Your request was successfully received' })
+		const {_id} = request.params,
+			{body} = request
+
+		PublicationModel.update(_id, { $set: { reports: body.reports, deleted_at: new Date().getTime() } }, (err, data) => {
+			if(err)
+				return next(err)
+			
+			response.json(data)
+		})
 	},
 
 	remove: (request, response, next) => {
-		response.status(201)
-		response.json({ status: 'OK', message: 'Your request was successfully received' })
+		const {_id} = request.params
+
+		PublicationModel.remove(_id, (err, data) => {
+	    	if(err)
+				return next(err)
+		
+			response.json(data)
+		})
 	}
 }
