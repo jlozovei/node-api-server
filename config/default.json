@@ -12,7 +12,7 @@
 		"prod": {
 			"username": "mongouser",
 			"password": "mongouser1",
-			"server": "ds247170",
+			"server": "ds247170.mlab.com",
 			"port": "47170",
 			"database": "heroku_nvkktxsr",
 			"collection": "node_api"
