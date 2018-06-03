@@ -10,6 +10,8 @@ function __connection() {
 	const auth = username ? `${username}:${password}@` : ''
 	const connection = `mongodb://${auth}${server}:${port}/${database}`
 
+	console.log(connection)
+
 	return connection
 }
 
