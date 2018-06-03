@@ -5,7 +5,8 @@
   "main": "./app.js",
   "scripts": {
     "test": "node_modules/mocha/bin/mocha tests/unit/* --recursive --exit",
-    "start": "export DEBUG=node_api:* && export NODE_ENV=prod && nodemon ./bin/www"
+    "start": "export DEBUG=node_api:* && export NODE_ENV=prod && nodemon ./bin/www",
+    "local": "export DEBUG=node_api:* && export NODE_ENV=local && nodemon ./bin/www"
   },
   "repository": {
     "type": "git",

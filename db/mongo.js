@@ -6,7 +6,7 @@ const debug   = require('debug')('node_api:db')
 
 
 function __connection() {
-	const {username, password, server, port, database} = config.get('mongo.local')
+	const {username, password, server, port, database} = config.get(`mongo.${process.env.NODE_ENV}`)
 	const auth = username ? `${username}:${password}@` : ''
 	const connection = `mongodb://${auth}${server}:${port}/${database}`
 

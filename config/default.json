@@ -10,11 +10,11 @@
 		},
 
 		"prod": {
-			"username": "",
-			"password": "",
-			"server": "",
-			"port": "",
-			"database": "node_api",
+			"username": "mongouser",
+			"password": "mongouser1",
+			"server": "ds247170",
+			"port": "47170",
+			"database": "heroku_nvkktxsr",
 			"collection": "node_api"
 		}
 	}
