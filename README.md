@@ -1,6 +1,6 @@
 # Node API - Server
 
-This repo is dedicated to server-side's code of [node-api](https://github.com/jlozovei/node-api). Put simply, our server-side will manage the requests made by the client-side, authenticate and provide the information requested.
+This repo is dedicated to server-side's code of node api tutorial. Put simply, our server-side will manage the requests made by the client-side, authenticate and provide the information requested.
 
 
 Get the Postman Collection for this API: [API Postman Collection](https://www.getpostman.com/collections/8fa4f92fa73641e814b1)  
