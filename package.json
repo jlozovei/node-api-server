@@ -20,7 +20,7 @@
   "homepage": "https://github.com/jlozovei/node-api-server#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "config": "^1.30.0",
+    "config": "^3.3.8",
     "cors": "^2.8.4",
     "debug": "^3.1.0",
     "express": "^4.16.3",
